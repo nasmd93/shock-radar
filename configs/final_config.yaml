@@ -1,0 +1,59 @@
+# Shock Radar — frozen experiment configuration
+# Provenance: final notebooks 01–05. This file documents and checks settings;
+# notebooks may keep parameters inline and do not uniformly load them from YAML.
+project:
+  name: shock-radar
+  evaluation_year: 2024
+
+data:
+  n_complete_total_series: 2016
+  n_complete_category_series: 12096
+  start: '2023-01-01'
+  end: '2024-12-01'
+
+forecasting:
+  horizons: [1, 2, 3]
+  test_origins: ['2024-06-01', '2024-07-01', '2024-08-01', '2024-09-01']
+  evaluation_metric: MAE
+  n_forecasts_per_model: 24192
+
+chronos:
+  checkpoint: amazon/chronos-bolt-base
+
+reference_ensemble:
+  members: [chronos_relative, ets_relative, seasonal_growth]
+  weights: [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+
+static_ensemble:
+  panel_weight: 0.45
+  seasonal_weight: 0.55
+
+shock_detector:
+  growth_window: 3
+  max_detection_delay: 2
+  baseline_threshold: 3.0
+  size_thresholds:
+    Q1: 2.2
+    Q2: 2.3
+    Q3: 2.3
+    Q4: 2.6
+    Q5: 3.6
+
+synthetic_test:
+  shock_levels: [-0.20, -0.10, -0.05, 0.05, 0.10, 0.20]
+  dev_seeds: [0, 1, 2]
+  test_seeds: [300, 301, 302, 303, 304]
+  events_in_test: 5040
+
+classical_detectors:
+  calibration_split: DEV
+  cusum_threshold: 5.0
+  page_hinkley_threshold: 4.5
+  dev_far_target_per_100: 3.5
+  dev_far_ceiling_per_100: 3.75
+
+external_validation:
+  top_n: 10
+  selection: priority_rank
+  interpretation_only: true
+  require_verified_publication_date_for_forecasting: true

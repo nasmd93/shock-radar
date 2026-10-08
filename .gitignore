@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+
+# Local environment
+.env
+.env.*
+
+# Source datasets
+data/raw/**
+
+# Intermediate files
+# Only curated files should be present in submission/data/interim.
+# Do not copy experimental outputs from the working project.
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+*.backup.ipynb
+
+# Model caches
+.cache/
+models/checkpoints/
+
+# Operating systems
+.DS_Store
+Thumbs.db
