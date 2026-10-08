@@ -142,13 +142,6 @@ python -m ipykernel install --user --name shock-radar --display-name 'Python (Sh
 
 Настройки описаны в [`configs/final_config.yaml`](configs/final_config.yaml). Он фиксирует конфигурацию и служит для сверки параметров; не все notebook-параметры обязательно читаются непосредственно из YAML.
 
-## Методологические ограничения
-
-- Jun–Sep — исторический development/challenger benchmark, не untouched holdout; Oct–Nov — отдельная поздняя проверка.
-- Synthetic injected shifts не равнозначны подтверждённым изменениям реальной экономики.
-- Категориальный `main_driver` — статистическая ассоциация, не установленная причина и не денежный вклад.
-- Ручная внешняя проверка ограничена TOP-10 и не доказывает real-world precision.
-- Из-за отсутствия проверенных publication dates количественное влияние новостей на точность прогнозов не оценивалось.
 
 ## Воспроизводимость и использование
 
