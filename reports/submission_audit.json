@@ -1,0 +1,84 @@
+{
+  "notebooks": [
+    {
+      "name": "00_data_final.ipynb",
+      "code_cells": 17,
+      "cells_with_outputs": 17,
+      "outputs": 32
+    },
+    {
+      "name": "01_forecasting_baselines_final.ipynb",
+      "code_cells": 15,
+      "cells_with_outputs": 14,
+      "outputs": 27
+    },
+    {
+      "name": "02_forecasting_static_final.ipynb",
+      "code_cells": 14,
+      "cells_with_outputs": 11,
+      "outputs": 21
+    },
+    {
+      "name": "03_forecasting_final.ipynb",
+      "code_cells": 31,
+      "cells_with_outputs": 25,
+      "outputs": 36
+    },
+    {
+      "name": "04_shock_detector_final.ipynb",
+      "code_cells": 17,
+      "cells_with_outputs": 17,
+      "outputs": 39
+    },
+    {
+      "name": "05_real_shocks_and_attribution_final.ipynb",
+      "code_cells": 26,
+      "cells_with_outputs": 25,
+      "outputs": 71
+    },
+    {
+      "name": "06_results_final.ipynb",
+      "code_cells": 16,
+      "cells_with_outputs": 16,
+      "outputs": 47
+    }
+  ],
+  "required_files": {
+    "README.md": true,
+    "data/README.md": true,
+    "requirements.txt": true,
+    "configs/final_config.yaml": true,
+    "reports/Shock_Radar_Methodology_RU.docx": true,
+    "reports/Shock_Radar_Presentation_Green_RU.pdf": true
+  },
+  "data": {
+    "baseline_multihorizon_summary.csv": {
+      "exists": true,
+      "sha256": "a57df6f21998cc0dd03360a42f047d94bc0add6bef172544775c269f7428639d"
+    },
+    "forecast_final_summary.csv": {
+      "exists": true,
+      "sha256": "d5066ecd4802747d606d82eb3744c627dc07b4aba96c354c2dbf819972276cec"
+    },
+    "shock_detector_four_method_test_comparison.csv": {
+      "exists": true,
+      "sha256": "c9e57990b189c28a9b549ca621d40191d0b15eeced48ef5e3ce45c303dce0460"
+    },
+    "shock_real_cases_summary.csv": {
+      "exists": true,
+      "sha256": "f46c74e13729503084aead618d9150952545e7a8992d3b42e2f7f91bbe8b6b0a"
+    },
+    "shock_news_alignment_quantitative_top10.csv": {
+      "exists": true,
+      "sha256": "c7fecbf618fe00abe4e8ffc2dc988f7f4992599e89fca46be196f09df346cc04"
+    },
+    "final_results_summary.csv": {
+      "exists": true,
+      "sha256": "5e5772b7e8cf7c4894094176fcfa7ab9308b8270816a6dcbc099816f489f93bc"
+    },
+    "final_results_manifest.json": {
+      "exists": true,
+      "sha256": "928abc98ab67482d3d283665941e31a8d610c5ccbf451d76a80152f79d301a28"
+    }
+  }
+}
