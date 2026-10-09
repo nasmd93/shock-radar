@@ -1,0 +1,76 @@
+{
+  "name": "Final forecasting model benchmark",
+  "primary_metric": "MAE",
+  "secondary_metric": "R2",
+  "data_panel": "2016 complete municipal series, Jan-2023 to Dec-2024",
+  "source_sha256": "c7c2b32f8a36a3a1f3a83db1dbbe8219657afcaf78677623540fa650ccaaa471",
+  "origins": [
+    "2024-06-01",
+    "2024-07-01",
+    "2024-08-01",
+    "2024-09-01"
+  ],
+  "horizons": [
+    1,
+    2,
+    3
+  ],
+  "n_series": 2016,
+  "n_forecasts_per_model": 24192,
+  "methods": {
+    "prophet": {
+      "config_id": "prophet_linear_yearly_fourier3_v1",
+      "growth": "linear",
+      "yearly_fourier_order": 3,
+      "weekly_seasonality": false,
+      "daily_seasonality": false,
+      "uncertainty_samples": 0
+    },
+    "factor_anchor": "custom panel-factor baseline",
+    "seasonal_growth": {
+      "growth_window": 3
+    },
+    "ets_relative": "AutoETS(season_length=1) on relative log-level",
+    "chronos_relative": {
+      "checkpoint": "amazon/chronos-bolt-base",
+      "quantile": 0.5,
+      "representation": "relative log-level"
+    },
+    "ensemble_mean": {
+      "members": [
+        "chronos_relative",
+        "ets_relative",
+        "seasonal_growth"
+      ],
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "tuned_on_test": false
+    }
+  },
+  "mae": {
+    "ensemble_mean": 761.9164271742022,
+    "chronos_relative": 885.7635710261483,
+    "ets_relative": 925.7915319810268,
+    "factor_anchor": 939.2650602782846,
+    "seasonal_growth": 995.0258150949704,
+    "prophet": 1428.0020640004468
+  },
+  "r2": {
+    "ensemble_mean": 0.9912944126591211,
+    "chronos_relative": 0.9883120581303525,
+    "ets_relative": 0.9848846506674843,
+    "factor_anchor": 0.98388700565771,
+    "seasonal_growth": 0.9871002327218054,
+    "prophet": 0.9711476711585474
+  },
+  "prophet_comparison": {
+    "prophet_mae": 1428.0020640004468,
+    "reference_ensemble_mae": 761.9164271742022,
+    "gain_vs_prophet": 666.0856368262446,
+    "gain_vs_prophet_pct": 46.64458501973399
+  },
+  "methodology": "All models are evaluated on identical time-safe forecast cells. Prophet is a separate comparator and is not part of the ensemble. Jun-Sep is a development/challenger benchmark, not a new untouched holdout."
+}

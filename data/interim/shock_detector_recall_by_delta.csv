@@ -1,0 +1,13 @@
+method,delta,n_events,recall
+Cross-sectional baseline,-0.2,789,0.973384030418251
+Cross-sectional baseline,-0.1,871,0.669345579793341
+Cross-sectional baseline,-0.05,843,0.15895610913404506
+Cross-sectional baseline,0.05,860,0.1313953488372093
+Cross-sectional baseline,0.1,810,0.5123456790123457
+Cross-sectional baseline,0.2,867,0.9469434832756632
+Size-aware surprise,-0.2,789,0.9987325728770595
+Size-aware surprise,-0.1,871,0.7761194029850746
+Size-aware surprise,-0.05,843,0.25029655990510086
+Size-aware surprise,0.05,860,0.23604651162790696
+Size-aware surprise,0.1,810,0.7098765432098766
+Size-aware surprise,0.2,867,0.9907727797001153

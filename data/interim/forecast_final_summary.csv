@@ -1,0 +1,6 @@
+evaluation,model,MAE
+Jun-Sep benchmark,Baseline ensemble,761.9164271742022
+Jun-Sep benchmark,Cross-sectional residual correction,758.339103467964
+Oct-Nov forward,Baseline ensemble,880.3969331436045
+Oct-Nov forward,Static 45/55,858.8102406859571
+Oct-Nov forward,Online adaptive,834.3311479346082

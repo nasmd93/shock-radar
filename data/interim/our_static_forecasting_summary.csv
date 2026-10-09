@@ -1,0 +1,3 @@
+period,n_forecasts,MAE
+Jun-Sep multi-horizon,24192,790.8586270290485
+Nov-Dec forward,6048,858.8102406859571

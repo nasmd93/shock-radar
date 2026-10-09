@@ -1,0 +1,58 @@
+{
+  "name": "Real shock episodes, category attribution and external audit",
+  "input_monthly_signals": 975,
+  "input_series_with_signals": 546,
+  "n_episodes": 826,
+  "n_series_with_episodes": 546,
+  "episode_rule": "consecutive detected months within the same total series and the same direction",
+  "category_alignment": "municipality name is used only if it maps to exactly one complete series in each of all six categories",
+  "n_safe_total_series": 1909,
+  "category_forecast": "causal seasonal-growth h1, YoY window=3",
+  "category_normalization": "robust z inside category x 2023-size-quintile x month",
+  "category_attribution_time": "all five component categories are evaluated only at aggregate episode peak_month",
+  "strong_category_rule": "at peak_month, raw surprise and robust z have episode direction and abs(z) >= 2",
+  "priority_score": "mean percentile rank of peak score ratio, absolute surprise magnitude and episode duration; triage only",
+  "top_n_saved": 40,
+  "external_validation": {
+    "n_cases": 10,
+    "selection": "first 10 episodes by frozen priority_rank; selected before external source review",
+    "audit_groups": {
+      "A_structural": [
+        1,
+        4,
+        6
+      ],
+      "B_local_economic": [
+        2,
+        5,
+        7,
+        9
+      ],
+      "C_unresolved": [
+        3,
+        8,
+        10
+      ]
+    },
+    "strong_match": 3,
+    "possible_match": 3,
+    "external_event_without_clear_link": 2,
+    "no_clear_explanation": 2,
+    "strong_match_pct": 30.0,
+    "strong_or_possible_pct": 60.0,
+    "protocol": "manual grouped audit of frozen TOP-10 using independent public sources; no live retrieval inside notebook",
+    "review_date": "2026-10-07"
+  },
+  "news_alignment": {
+    "registry": "TOP-10 retrospective external-event audit",
+    "event_grain": "event_id, series_id, event_month",
+    "forecast_origin_rule": "verified publication_date <= origin; exclude retrospective audit",
+    "publication_dates_verified": 0,
+    "forecast_model_uses_news": false,
+    "detector_uses_news": false,
+    "retrospective_monthly_events": 7,
+    "quantitative_audit_file": "shock_news_alignment_quantitative_top10.csv",
+    "check_distribution_file": "shock_news_alignment_checks_top10.csv"
+  },
+  "causality_note": "category attribution and external evidence are descriptive associations and do not establish causality"
+}

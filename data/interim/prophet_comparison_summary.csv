@@ -1,0 +1,3 @@
+model,MAE,gain_vs_prophet,gain_vs_prophet_pct
+Prophet,1428.0020640004468,0.0,0.0
+Reference forecasting ensemble,761.9164271742022,666.0856368262446,46.64458501973399

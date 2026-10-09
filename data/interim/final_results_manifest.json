@@ -1,0 +1,145 @@
+{
+  "name": "Final competition results summary",
+  "forecast_benchmark_01": {
+    "prophet_mae": 1428.0020640004468,
+    "reference_mae": 761.9164271742022,
+    "gain_vs_prophet_pct": 46.64458501973399,
+    "source_file": "baseline_multihorizon_summary.csv"
+  },
+  "detector_four_method_test": [
+    {
+      "method": "Cross-sectional baseline",
+      "event_recall": 0.5623015873015873,
+      "mean_delay": 0.0515172900494001,
+      "share_delay0": 0.963302752293578,
+      "false_alarms_100": 3.223799987863341,
+      "n_events": 5040,
+      "events_found": 2834,
+      "n_alarms": 5680,
+      "background_alarms": 2125,
+      "event_months": 24804,
+      "correct_event_alarms": 3133,
+      "other_correct_event_alarms": 299,
+      "wrong_direction_event_alarms": 422,
+      "month_precision": 0.5515845070422535,
+      "month_recall": 0.1263102725366876,
+      "month_f1": 0.2055504526964965
+    },
+    {
+      "method": "Size-aware surprise",
+      "event_recall": 0.6571428571428571,
+      "mean_delay": 0.0851449275362318,
+      "share_delay0": 0.9332729468599034,
+      "false_alarms_100": 3.448328175253353,
+      "n_events": 5040,
+      "events_found": 3312,
+      "n_alarms": 8406,
+      "background_alarms": 2273,
+      "event_months": 24804,
+      "correct_event_alarms": 5906,
+      "other_correct_event_alarms": 2594,
+      "wrong_direction_event_alarms": 227,
+      "month_precision": 0.7025933856768974,
+      "month_recall": 0.2381067569746815,
+      "month_f1": 0.3556760012044564
+    },
+    {
+      "method": "CUSUM",
+      "event_recall": 0.5075396825396825,
+      "mean_delay": 0.5301016419077405,
+      "share_delay0": 0.5551211884284597,
+      "false_alarms_100": 3.223799987863341,
+      "n_events": 5040,
+      "events_found": 2558,
+      "n_alarms": 12642,
+      "background_alarms": 2125,
+      "event_months": 24804,
+      "correct_event_alarms": 10363,
+      "other_correct_event_alarms": 7805,
+      "wrong_direction_event_alarms": 154,
+      "month_precision": 0.8197278911564626,
+      "month_recall": 0.4177955168521206,
+      "month_f1": 0.5534903594509427
+    },
+    {
+      "method": "Page-Hinkley",
+      "event_recall": 0.4476190476190476,
+      "mean_delay": 0.2983156028368794,
+      "share_delay0": 0.7331560283687943,
+      "false_alarms_100": 3.446811092906123,
+      "n_events": 5040,
+      "events_found": 2256,
+      "n_alarms": 11485,
+      "background_alarms": 2272,
+      "event_months": 24804,
+      "correct_event_alarms": 5980,
+      "other_correct_event_alarms": 3724,
+      "wrong_direction_event_alarms": 3233,
+      "month_precision": 0.520679146713104,
+      "month_recall": 0.2410901467505241,
+      "month_f1": 0.3295764556752735
+    }
+  ],
+  "news_alignment": {
+    "retrospective_events": 10,
+    "dated_event_months": 7,
+    "forecast_eligible_events": 0,
+    "no_forecasting_lift_claimed": true,
+    "quantitative_top10_audit": {
+      "frozen_top10_episodes": 10,
+      "records_with_source": 8,
+      "records_with_event_date": 7,
+      "dated_series_months": 7,
+      "verified_publication_dates": 0,
+      "forecast_eligible_audit_records": 0,
+      "status_external_event_without_clear_link": 2,
+      "status_no_clear_explanation": 2,
+      "status_possible_match": 3,
+      "status_strong_match": 3
+    },
+    "quantitative_check_distributions_file": "shock_news_alignment_checks_top10.csv"
+  },
+  "forecasting": {
+    "jun_sep": {
+      "reference_mae": 761.9164271742022,
+      "residual_mae": 758.339103467964,
+      "gain_mae": 3.5773237062381895
+    },
+    "oct_nov_forward": {
+      "reference_mae": 880.3969331436045,
+      "static_mae": 858.8102406859571,
+      "online_mae": 834.3311479346082
+    }
+  },
+  "shock_detector": {
+    "reference_event_recall": 0.5623015873015873,
+    "size_aware_event_recall": 0.6571428571428571,
+    "event_recall_gain": 0.09484126984126984,
+    "bootstrap_ci": [
+      0.0792289321050836,
+      0.1052145172296144
+    ],
+    "false_alarms_100_reference": 3.223799987863341,
+    "false_alarms_100_size_aware": 3.448328175253353
+  },
+  "operational_2024": {
+    "monthly_signals": 975,
+    "shock_episodes": 826,
+    "safe_category_alignment_episodes": 776,
+    "episodes_with_main_driver": 639
+  },
+  "external_audit_top10": {
+    "strong_match": 3,
+    "possible_match": 3,
+    "external_event_without_clear_link": 2,
+    "no_clear_explanation": 2
+  },
+  "limitations": [
+    "Jun-Sep forecasting is a challenger benchmark, not untouched holdout",
+    "synthetic detector TEST is not a real-event precision benchmark",
+    "category driver is statistical association, not monetary contribution",
+    "external audit covers frozen TOP-10 only",
+    "CUSUM has higher month F1; Size-aware selected on event recall",
+    "TOP-10 news has no verified publication dates and does not enter forecasting"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "project": "Муниципальные расходы: детектор структурных изменений",
+  "n_series": 2016,
+  "evaluation_months": [
+    "2024-04-01",
+    "2024-05-01",
+    "2024-06-01",
+    "2024-07-01",
+    "2024-08-01",
+    "2024-09-01",
+    "2024-10-01",
+    "2024-11-01",
+    "2024-12-01"
+  ],
+  "forecast": "causal seasonal-growth window=3, h=1",
+  "surprise": "log(actual / prediction)",
+  "normalization": "cross-sectional median / 1.4826 MAD within month x 2023 size quintile",
+  "size_thresholds": {
+    "Q1": 2.2,
+    "Q2": 2.3,
+    "Q3": 2.3,
+    "Q4": 2.6,
+    "Q5": 3.6
+  },
+  "baseline": "difference in panel-median-centered log-YoY, robust monthly z, threshold=3",
+  "dev_seeds": [
+    0,
+    1,
+    2
+  ],
+  "test_seeds": [
+    300,
+    301,
+    302,
+    303,
+    304
+  ],
+  "synthetic_shocks": [
+    -0.2,
+    -0.1,
+    -0.05,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "synthetic_type": "persistent multiplicative level shift from onset through Dec-2024",
+  "fraction_injected": 0.5,
+  "max_detection_delay_months": 2,
+  "primary_evaluation_unit": "synthetic event",
+  "event_recall_definition": "events with correct-direction alarm within onset..onset+2 / all injected events",
+  "delay_definition": "months from onset to first correct-direction alarm among detected events",
+  "false_alarm_definition": "alarms in background months before any injected modification per 100 background series-months",
+  "secondary_month_level_definition": {
+    "TP": "correct-direction alarm in an active synthetic-event month",
+    "FP": "alarm in a background month or wrong-direction alarm in an active event month",
+    "FN": "active synthetic-event month without a correct-direction alarm"
+  },
+  "important_metric_note": "Primary event Precision/F1 are intentionally omitted. Dividing first detected events by all monthly alarms mixes event-level and month-level units and penalizes repeated alarms from one persistent event.",
+  "n_real_monthly_signals": 975,
+  "n_real_series_with_signals": 546,
+  "test_metrics": {
+    "Cross-sectional baseline": {
+      "event_recall": 0.5623015873015873,
+      "mean_delay": 0.051517290049400144,
+      "share_delay0": 0.963302752293578,
+      "false_alarms_100": 3.2237999878633414,
+      "n_events": 5040,
+      "events_found": 2834,
+      "n_alarms": 5680,
+      "background_alarms": 2125,
+      "event_months": 24804,
+      "correct_event_alarms": 3133,
+      "other_correct_event_alarms": 299,
+      "wrong_direction_event_alarms": 422,
+      "month_precision": 0.5515845070422535,
+      "month_recall": 0.12631027253668764,
+      "month_f1": 0.2055504526964965
+    },
+    "Size-aware surprise": {
+      "event_recall": 0.6571428571428571,
+      "mean_delay": 0.08514492753623189,
+      "share_delay0": 0.9332729468599034,
+      "false_alarms_100": 3.448328175253353,
+      "n_events": 5040,
+      "events_found": 3312,
+      "n_alarms": 8406,
+      "background_alarms": 2273,
+      "event_months": 24804,
+      "correct_event_alarms": 5906,
+      "other_correct_event_alarms": 2594,
+      "wrong_direction_event_alarms": 227,
+      "month_precision": 0.7025933856768974,
+      "month_recall": 0.2381067569746815,
+      "month_f1": 0.35567600120445647
+    }
+  },
+  "note": "Synthetic validation measures detection of controlled shifts. It is not ground truth for economic causality."
+}

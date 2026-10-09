@@ -1,0 +1,26 @@
+{
+  "name": "Final forecasting pipeline",
+  "n_series": 2016,
+  "jun_sep": {
+    "baseline_mae": 761.9164271742022,
+    "residual_correction_mae": 758.339103467964,
+    "gain": 3.5773237062381895,
+    "interpretation": "challenger benchmark; not a new untouched holdout"
+  },
+  "oct_nov_forward": {
+    "baseline_mae": 880.3969331436045,
+    "static_mae": 858.8102406859571,
+    "online_adaptive_mae": 834.3311479346082,
+    "interpretation": "separate later forward evaluation"
+  },
+  "residual_model": {
+    "config": "balanced",
+    "alpha_global": 0.0,
+    "alpha_by_h": {
+      "1": 0.35,
+      "2": 0.0,
+      "3": 0.0
+    }
+  },
+  "methodology": "Forecast inputs are restricted to each origin. Retrospective residual calibration includes June 2024 targets; Jun-Sep results are challenger benchmark, not real-time June holdout. Online adaptive weights use only already resolved same-horizon forecasts."
+}

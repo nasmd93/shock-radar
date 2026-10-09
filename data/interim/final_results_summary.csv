@@ -1,0 +1,34 @@
+section,metric,value
+forecast_benchmark_01,prophet_mae,1428.0020640004468
+forecast_benchmark_01,reference_ensemble_mae,761.9164271742022
+forecast_benchmark_01,gain_vs_prophet_pct,46.64458501973399
+forecast_jun_sep,reference_mae,761.9164271742022
+forecast_jun_sep,residual_mae,758.339103467964
+forecast_jun_sep,gain_mae,3.5773237062381895
+forecast_forward,reference_mae,880.3969331436045
+forecast_forward,static_mae,858.8102406859571
+forecast_forward,online_mae,834.3311479346082
+shock_detector,reference_event_recall,0.5623015873015873
+shock_detector,size_aware_event_recall,0.6571428571428571
+shock_detector,event_recall_gain,0.09484126984126984
+shock_detector,recall_gain_ci_low,0.0792289321050836
+shock_detector,recall_gain_ci_high,0.1052145172296144
+detector_four_method,Cross-sectional baseline_event_recall,0.5623015873015873
+detector_four_method,Size-aware surprise_event_recall,0.6571428571428571
+detector_four_method,CUSUM_event_recall,0.5075396825396825
+detector_four_method,Page-Hinkley_event_recall,0.4476190476190476
+detector_four_method,Cross-sectional baseline_month_f1,0.2055504526964965
+detector_four_method,Size-aware surprise_month_f1,0.3556760012044564
+detector_four_method,CUSUM_month_f1,0.5534903594509427
+detector_four_method,Page-Hinkley_month_f1,0.3295764556752735
+news_alignment,retrospective_events,10.0
+news_alignment,dated_event_months,7.0
+news_alignment,forecast_eligible_events,0.0
+operational,monthly_signals,975.0
+operational,shock_episodes,826.0
+operational,safe_category_alignment_episodes,776.0
+operational,episodes_with_main_driver,639.0
+external_audit,strong_match,3.0
+external_audit,possible_match,3.0
+external_audit,external_event_without_clear_link,2.0
+external_audit,no_clear_explanation,2.0

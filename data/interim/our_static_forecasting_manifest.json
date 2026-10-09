@@ -1,0 +1,18 @@
+{
+  "name": "Static Panel AR + Seasonal ensemble",
+  "panel_weight": 0.45,
+  "seasonal_weight": 0.55,
+  "calibration_cutoff": "2024-06-01",
+  "calibration_rows": 12096,
+  "test_origins": [
+    "2024-06-01",
+    "2024-07-01",
+    "2024-08-01",
+    "2024-09-01"
+  ],
+  "test_rows": 24192,
+  "test_mae": 790.8586270290485,
+  "forward_rows": 6048,
+  "forward_mae": 858.8102406859571,
+  "status": "historical static forecasting benchmark; publication-lag limitation documented"
+}

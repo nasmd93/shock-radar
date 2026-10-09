@@ -1,0 +1,11 @@
+metric,value
+frozen_top10_episodes,10
+records_with_source,8
+records_with_event_date,7
+dated_series_months,7
+verified_publication_dates,0
+forecast_eligible_audit_records,0
+status_external_event_without_clear_link,2
+status_no_clear_explanation,2
+status_possible_match,3
+status_strong_match,3

@@ -1,0 +1,9 @@
+{
+  "thresholds": {
+    "CUSUM": 5.0,
+    "Page-Hinkley": 4.5
+  },
+  "k": 0.5,
+  "far_ceiling_dev": 3.75048265000254,
+  "selection": "DEV only"
+}
